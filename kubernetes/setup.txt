@@ -10,8 +10,7 @@ vagrant up
 
 vboxmanage list vms
 
-cd ../kubespray/inventory/sample/artifacts
-cp admin.conf ~/.kube/config
+mkdir -p ~/.kube/config && cp ./inventory/sample/artifacts/admin.conf ~/.kube/config 
 
 kubectl cluster-info
 kubectl version --short
