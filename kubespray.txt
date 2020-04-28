@@ -38,3 +38,6 @@ kubectl -n kube-system describe secret kubernetes-dashboard-token | grep 'token:
 #https://github.com/kubernetes-sigs/kubespray/blob/master/docs/getting-started.md
 
 kubectl proxy
+
+#cheatsheet
+#https://kubernetes.io/docs/reference/kubectl/cheatsheet/
