@@ -1,0 +1,41 @@
+#https://www.youtube.com/watch?v=dz-nuXbvqWU&list=PL34sAs7_26wOAqYsrIhtDaIviGlSkmfv9
+#make sure python3 and pip be installed
+
+git clone https://github.com/kubernetes-sigs/kubespray.git
+cd kubespray
+sudo pip install -r requirements.txt
+
+#creating vm for the k8s cluster(may take 1x-2x minutes)
+vagrant up
+
+vboxmanage list vms
+
+cd ../kubespray/inventory/sample/artifacts
+cp admin.conf ~/.kube/config
+
+kubectl cluster-info
+kubectl version --short
+kubectl get nodes
+kubectl get nodes -o wide
+kubectl get cs
+kubectl get nodes
+kubectl -n kube-system get all
+watch kubectl get all
+
+#deplpy nginx image with 3 node
+kubectl run nginx --image nginx --replicas 3
+
+#acess to nginx
+kubectl exec -it <name> -- bash
+
+#delete deployment nginx
+kubectl delete deploy nginx
+
+#https://github.com/kubernetes-sigs/kubespray/blob/master/docs/vagrant.md
+#back to kubespray directory
+kubectl create -f contrib/misc/clusteradmin-rbac.yml
+kubectl -n kube-system describe secret kubernetes-dashboard-token | grep 'token:' | grep -o '[^ ]\+$' 
+
+#https://github.com/kubernetes-sigs/kubespray/blob/master/docs/getting-started.md
+
+kubectl proxy
