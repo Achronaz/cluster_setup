@@ -6,7 +6,7 @@ spec:
   selector:
     app: nodestress
   ports:
-    - port: 8080
+    - port: 80
       targetPort: 8080
-      NodePort: 8082
-  type: LoadBalancer
+      nodePort: 32100
+  type: NodePort
