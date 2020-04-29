@@ -9,7 +9,7 @@ git clone https://github.com/kubernetes-sigs/kubespray.git
 cd kubespray
 sudo pip install -r requirements.txt
 vagrant up
-mkdir -p ~/.kube/config && cp ./inventory/sample/artifacts/admin.conf ~/.kube/config
+mkdir -p ~/.kube/ && cp ./inventory/sample/artifacts/admin.conf ~/.kube/config
 ```
 ### Useful commands
 ```

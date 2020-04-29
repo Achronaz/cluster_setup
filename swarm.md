@@ -65,3 +65,8 @@ docker swarm join \
     192.168.99.100:2377
 logout
 ```
+
+```
+VBoxManage list -l hostonlyifs
+VBoxManage hostonlyif remove vboxnet1
+```
