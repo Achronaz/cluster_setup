@@ -1,4 +1,4 @@
-### Install Docker Engine
+### Install Packages
 ```
 sudo su
 apt-get update
@@ -7,19 +7,14 @@ apt install docker.io
 systemctl start docker
 systemctl enable docker
 docker --version
+apt-get install virtualbox
+apt-get install vagrant
 ```
-### create Docker Machine
+### Create Docker Machine
 ```
 for i in node{1..3}; do docker-machine create --driver virtualbox $i; done
-docker-machine ls
 vboxmanage list vms
-```
-### Limit Vm Resource
-```
-docker-machine stop
-VBoxManage modifyvm default --cpus 1
-VBoxManage modifyvm default --memory 2048
-docker-machine start
+docker-machine ls
 ```
 ### Init and Join Swarm Cluster
 #### @host
@@ -52,6 +47,8 @@ docker-machine stop node3
 docker node rm node3
 
 docker swarm leave                              #leave a cluster
+
+docker service create --name nodeapp --publish 8080:8080 achronaz/stress-test
 
 logout
 ```
