@@ -21,14 +21,5 @@ kubectl get cs
 kubectl get nodes
 kubectl -n kube-system get all
 watch kubectl get all
-
-#deplpy nginx image with 3 pods
-kubectl run <name> --image nginx --replicas 3
-
-#acess to nginx container
-kubectl exec -it <name> -- bash
-
-#delete deployment nginx
-kubectl delete deploy <name>
 ```
 [more details for k8s commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)

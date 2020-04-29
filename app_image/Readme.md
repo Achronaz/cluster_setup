@@ -10,24 +10,18 @@ apt-get install nodejs
 ```
 docker build -t achronaz/stress-test .
 docker images
-
-#run image and reflect port <container_port:host_port>
-docker run -p 8080:8080 --name=stressTest -d achronaz/stress-test
-
-# Get container ID
-docker ps
-
-# Print app output
-docker logs <container id>
-
-# Enter the container
-docker exec -it <container id> /bin/bash
-
-# Test the app
-curl -i localhost:8080
 ```
-Deploy to Kubernetes
+### Deploy to Kubernetes Cluster
 ```
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
+```
+### Run on Docker
+```
+#run image and reflect port <container_port:host_port>
+docker run -p 8080:8080 --name=stressTest -d achronaz/stress-test
+```
+### Run on Swarm Cluster
+```
+docker service create --replicas 1 --name nodestress achronaz/stress-test
 ```

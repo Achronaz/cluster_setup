@@ -30,8 +30,7 @@ docker-machine ssh node3
 ```
 #### @node1
 ```
-#find out the <IP Address> of node1,
-ip a s
+ip a s                                          #find out the <IP Address> of node1
 
 docker swarm init --advertise-addr <IP Address>
 > To add a worker to this swarm, run the following command:
@@ -40,28 +39,19 @@ docker swarm init --advertise-addr <IP Address>
     --token SWMTKN-1-5rgvodnnugqbfiuzhvcpnb30x58zwo6oh3oefd8tbcb40lp1o7-df8tr59zzv4ocyumb31m3fezt \
     192.168.99.100:2377
 
-# you can generate join token for worker by this command later
-docker swarm join-token worker
+docker swarm join-token worker                  # you can generate join token for worker by this command later
 
-#more information
-docker info
+docker info                                     #more information
+docker node ls                                  #view node info
 
-#view node info
-docker node ls
+docker node promote node2                       #promote node2 to manager
+docker node deomote node1                       #demote node1 to worker
 
-#promote node2 to manager
-docker node promote node2
-
-#demote node1 to worker
-docker node deomote node1
-
-#remove node3
-docker node update -availability drain node3
+docker node update -availability drain node3    #remove node3
 docker-machine stop node3
 docker node rm node3
 
-#leave a cluster
-docker swarm leave
+docker swarm leave                              #leave a cluster
 
 logout
 ```
