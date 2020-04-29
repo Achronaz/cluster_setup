@@ -8,11 +8,11 @@ apt-get install nodejs
 ```
 ### Build Docker Image
 ```
-docker build -t Achronaz/stress-test .
+docker build -t achronaz/stress-test .
 docker images
 
-#run image and reflect container:8080 to host:80
-docker run -p 80:8080 -d Achronaz/stress-test
+#run image and reflect port <container_port:host_port>
+docker run -p 8080:8080 --name=stressTest -d achronaz/stress-test
 
 # Get container ID
 docker ps
