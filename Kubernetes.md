@@ -1,6 +1,6 @@
 ### Install python3 and pip
 ```
-apt-get install python-pip 
+apt-get install python3-pip
 apt-get install vagrant
 ```
 ### Setup k8s cluster via kubespray
