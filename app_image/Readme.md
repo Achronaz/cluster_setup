@@ -24,5 +24,5 @@ docker logs <container id>
 docker exec -it <container id> /bin/bash
 
 # Test the app
-curl -i localhost
+curl -i localhost:8080
 ```

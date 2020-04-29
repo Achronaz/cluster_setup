@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodestress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodestress
+  template:
+    metadata:
+      labels:
+        app: nodestress
+    spec:
+      containers:
+        - name: nodestress
+          image: achronaz/stress-test
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
