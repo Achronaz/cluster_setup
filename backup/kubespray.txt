@@ -21,7 +21,7 @@ kubectl get nodes
 kubectl -n kube-system get all
 watch kubectl get all
 
-#deplpy nginx image with 3 node
+#deplpy nginx image with 3 pods
 kubectl run nginx --image nginx --replicas 3
 
 #acess to nginx

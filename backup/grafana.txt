@@ -7,7 +7,7 @@ systemctl daemon-reload
 systemctl start grafana-server
 
 #MYSQL
-CREATE DATABASE Grafana
+CREATE DATABASE Grafana;
 CREATE USER 'grafana_admin'@'localhost' IDENTIFIED BY '$Rr123741456852';
 GRANT ALL PRIVILEGES ON Grafana.* TO 'grafana_admin'@'localhost';
 

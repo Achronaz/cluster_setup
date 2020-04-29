@@ -1,0 +1,56 @@
+### Install Docker Engine
+```
+sudo su
+apt-get update
+apt-get remove docker docker-engine docker.io
+apt install docker.io
+systemctl start docker
+systemctl enable docker
+docker --version
+```
+### create Docker Machine
+```
+docker-machine create --driver virtualbox manager1
+docker-machine create --driver virtualbox worker1
+docker-machine create --driver virtualbox worker2
+```
+### Limit Vm Resource
+```
+docker-machine stop
+VBoxManage modifyvm default --cpus 1
+VBoxManage modifyvm default --memory 2048
+docker-machine start
+```
+### Init and Join Swarm Cluster
+#### host
+```
+docker exec -it manager1
+docker exec -it worker1
+docker exec -it worker2
+docker node ls
+
+```
+#### manager1
+```
+docker swarm init --advertise-addr <manager1-IP>
+> To add a worker to this swarm, run the following command:
+
+    docker swarm join \
+    --token SWMTKN-1-5rgvodnnugqbfiuzhvcpnb30x58zwo6oh3oefd8tbcb40lp1o7-df8tr59zzv4ocyumb31m3fezt \
+    192.168.99.100:2377
+exit
+```
+#### worker1
+```
+docker swarm join \
+    --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
+    192.168.99.100:2377
+exit
+```
+#### worker2
+```
+docker swarm join \
+    --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
+    192.168.99.100:2377
+exit
+```
