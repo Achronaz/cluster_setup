@@ -22,7 +22,7 @@ VBoxManage modifyvm default --memory 2048
 docker-machine start
 ```
 ### Init and Join Swarm Cluster
-#### host
+#### @host
 ```
 docker-machine ssh node1
 docker-machine ssh node2
@@ -52,7 +52,7 @@ docker node ls
 #promote node2 to manager
 docker node promote node2
 
-#promote node1 to worker
+#demote node1 to worker
 docker node deomote node1
 
 #remove node3
