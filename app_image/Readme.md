@@ -26,3 +26,8 @@ docker exec -it <container id> /bin/bash
 # Test the app
 curl -i localhost:8080
 ```
+Deploy to Kubernetes
+```
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+```
