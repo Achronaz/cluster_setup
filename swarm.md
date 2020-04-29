@@ -8,7 +8,6 @@ systemctl start docker
 systemctl enable docker
 docker --version
 apt-get install virtualbox
-apt-get install vagrant
 ```
 ### Create Docker Machine
 ```
