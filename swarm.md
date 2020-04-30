@@ -11,7 +11,7 @@ apt-get install virtualbox
 ```
 ### Create Docker Machine
 ```
-for i in node{1..3}; do docker-machine create --driver virtualbox $i; done
+for i in node{1..3}; do docker-machine create --driver virtualbox --virtualbox-memory 2048 $i; done
 vboxmanage list vms
 docker-machine ls
 ```

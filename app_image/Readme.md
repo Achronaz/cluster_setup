@@ -19,9 +19,9 @@ kubectl apply -f service.yaml
 ### Run on Docker
 ```
 #run image and reflect port <container_port:host_port>
-docker run -p 8080:8080 --name=stressTest -d achronaz/stress-test
+docker run -p 8080:8080 --name=stressTest -d achronaz/stress-test:v1
 ```
 ### Run on Swarm Cluster
 ```
-docker service create --replicas 2 --name nodestress achronaz/stress-test
+docker service create --replicas 2 --name nodestress achronaz/stress-test:v1
 ```
