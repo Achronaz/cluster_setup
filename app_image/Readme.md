@@ -23,5 +23,5 @@ docker run -p 8080:8080 --name=stressTest -d achronaz/stress-test
 ```
 ### Run on Swarm Cluster
 ```
-docker service create --replicas 1 --name nodestress achronaz/stress-test
+docker service create --replicas 2 --name nodestress achronaz/stress-test
 ```
