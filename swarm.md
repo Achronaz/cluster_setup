@@ -15,6 +15,11 @@ for i in node{1..3}; do docker-machine create --driver virtualbox --virtualbox-m
 vboxmanage list vms
 docker-machine ls
 ```
+### List and Remove vboxnet
+```
+VBoxManage list -l hostonlyifs
+VBoxManage hostonlyif remove vboxnet1
+```
 ### Init and Join Swarm Cluster
 #### @host
 ```
@@ -45,6 +50,9 @@ docker node update -availability drain node3    #remove node3
 docker-machine stop node3
 docker node rm node3
 
+docker service scale servicename=3              #scaling service
+docker service update --replicas 3 servicename  #update replicas
+
 docker swarm leave                              #leave a cluster
 
 docker service create --name nodeapp --publish 8080:8080 achronaz/stress-test
@@ -66,7 +74,3 @@ docker swarm join \
 logout
 ```
 
-```
-VBoxManage list -l hostonlyifs
-VBoxManage hostonlyif remove vboxnet1
-```
