@@ -8,10 +8,11 @@ apt-get install nodejs
 ```
 ### Build Docker Image
 ```
-docker build -t achronaz/stress-test .
-docker images
+docker build -t [tag] .
+docker login docker.io
+docker push [tag]
 ```
-### Deploy to Kubernetes Cluster
+### Deploy or Upldate on Kubernetes Cluster
 ```
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
@@ -19,15 +20,13 @@ kubectl apply -f service.yaml
 # if you want to make some change for the app just edit  deployment.yaml or service.yaml
 # then run "kubectl apply -f deployment.yaml -f service.yaml"
 ```
-### Run on Swarm Cluster
+### Deploy and Update on Swarm Cluster
 ```
-docker service create --replicas 2 --name nodestress achronaz/stress-test:v1
-# if you want to make some change for the app
-# run "docker service update [option] servicename"
+docker service create --replicas 2 --name [service name] [tag]
+docker service update [option] [service name]
 ```
 ### Run on Docker
 ```
-#run image and reflect port <container_port:host_port>
-docker run -p 8080:8080 --name=stressTest -d achronaz/stress-test:v1
+docker run -p 8080:8080 --name=[container name] -d [tag]
 ```
 
