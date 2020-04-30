@@ -1,6 +1,0 @@
-```ShellSession
-docker-machine stop
-VBoxManage modifyvm default --cpus 2
-VBoxManage modifyvm default --memory 4096
-docker-machine start
-```

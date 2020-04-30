@@ -15,11 +15,6 @@ for i in node{1..3}; do docker-machine create --driver virtualbox --virtualbox-m
 vboxmanage list vms
 docker-machine ls
 ```
-### List and Remove vboxnet
-```
-VBoxManage list -l hostonlyifs
-VBoxManage hostonlyif remove vboxnet1
-```
 ### Init and Join Swarm Cluster
 #### @host
 ```
@@ -40,22 +35,15 @@ docker swarm init --advertise-addr <IP Address>
 
 docker swarm join-token worker                  # you can generate join token for worker by this command later
 
-docker info                                     #more information
-docker node ls                                  #view node info
+docker info                                     #inspect node details
+docker node ls                                  #list nodes
+docker service ls                               #list services
 
 docker node promote node2                       #promote node2 to manager
 docker node deomote node1                       #demote node1 to worker
 
-docker node update -availability drain node3    #remove node3
-docker-machine stop node3
-docker node rm node3
-
-docker service scale servicename=3              #scaling service
-docker service update --replicas 3 servicename  #update replicas
-
-docker swarm leave                              #leave a cluster
-
 docker service create --name nodeapp --publish 8080:8080 achronaz/stress-test
+docker service update --replicas 3 servicename  #update replicas
 
 logout
 ```
@@ -73,4 +61,9 @@ docker swarm join \
     192.168.99.100:2377
 logout
 ```
+### List and Remove vboxnet
+```
 
+VBoxManage list -l hostonlyifs
+VBoxManage hostonlyif remove vboxnet1
+```
