@@ -4,5 +4,5 @@ Youtube: [setup and deploy](https://www.youtube.com/watch?v=-rcjyEOFkvQ&feature=
 Domain: achronaz.com \
 Grafana: [grafana.achronaz.com](http://grafana.achronaz.com) \
 Portainer: [portainer.achronaz.com](http://portainer.achronaz.com) \
-API(Kubernetes): [api.achronaz.com](http://api.achronaz.com) \
-API(Swarm): [www.achronaz.com](http://api.achronaz.com)
+API(Kubernetes): [api.achronaz.com/test](http://api.achronaz.com/test) \
+API(Swarm): [www.achronaz.com/test](http://api.achronaz.com/test)
