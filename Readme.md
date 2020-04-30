@@ -3,5 +3,5 @@
 Environment: Ubuntu 18.04.4 LTS (GNU/Linux 5.3.0-46-generic x86_64) \
 Youtube: [setup and deploy](https://www.youtube.com/watch?v=-rcjyEOFkvQ&feature=youtu.be) \
 Domain: achronaz.com \
-API(Kubernetes): [api.achronaz.com/test](http://api.achronaz.com/test) \
-API(Swarm): [www.achronaz.com/test](http://api.achronaz.com/test)
+API(Kubernetes): [k8s.achronaz.com/test](http://k8s.achronaz.com/test) \
+API(Swarm): [swarm.achronaz.com/test](http://swarm.achronaz.com/test)
