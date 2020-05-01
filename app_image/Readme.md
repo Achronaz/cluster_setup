@@ -8,9 +8,10 @@ apt-get install nodejs
 ```
 ### Build Docker Image
 ```
-docker build -t [image tag] .
+docker build -t [registry]/[image tag] .
 docker login docker.io
-docker push [image tag]
+#enter username and password
+docker push [registry]/[image tag]
 ```
 ### Deploy or Upldate on Kubernetes Cluster
 ```
