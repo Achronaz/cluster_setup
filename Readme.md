@@ -14,7 +14,7 @@ API(Swarm): [swarm.achronaz.com/test](http://swarm.achronaz.com/test)
 │   ├── Dockerfile                  #Dockerfile for building images
 │   ├── package.json                
 │   ├── package-lock.json
-│   ├── Readme.md                   
+│   ├── Readme.md                   #build image, deploy and scaling application
 │   ├── server.js                   #source code of the app
 │   └── service.yaml                #yaml for creating kubernetes service
 ├── Kubernetes.md                   #set up kubernetes cluster
