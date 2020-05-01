@@ -1,4 +1,4 @@
-### Install Packages
+### Install Docker and VirtualBox
 ```
 sudo su
 apt-get update
