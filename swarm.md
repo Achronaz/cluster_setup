@@ -39,11 +39,8 @@ docker info                                     #inspect node details
 docker node ls                                  #list nodes
 docker service ls                               #list services
 
-docker node promote node2                       #promote node2 to manager
-docker node deomote node1                       #demote node1 to worker
-
-docker service create --name nodeapp --publish 8080:8080 achronaz/stress-test
-docker service update --replicas 3 servicename  #update replicas
+# details for deploying and scaling application 
+# please go through ./app_image/readme.md
 
 logout
 ```

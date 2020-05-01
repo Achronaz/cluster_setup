@@ -8,9 +8,9 @@ apt-get install nodejs
 ```
 ### Build Docker Image
 ```
-docker build -t [tag] .
+docker build -t [image tag] .
 docker login docker.io
-docker push [tag]
+docker push [image tag]
 ```
 ### Deploy or Upldate on Kubernetes Cluster
 ```
@@ -22,11 +22,11 @@ kubectl apply -f service.yaml
 ```
 ### Deploy and Update on Swarm Cluster
 ```
-docker service create --replicas 2 --name [service name] [tag]
+docker service create --replicas 2 --name [service name] [image tag]
 docker service update [option] [service name]
 ```
 ### Run on Docker
 ```
-docker run -p 8080:8080 --name=[container name] -d [tag]
+docker run -p 8080:8080 --name [container name] -d [image tag]
 ```
 

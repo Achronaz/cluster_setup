@@ -11,6 +11,10 @@ sudo pip install -r requirements.txt
 vagrant up
 rm -rf ~/.kube #if previous cache exist
 mkdir -p ~/.kube/ && cp ./inventory/sample/artifacts/admin.conf ~/.kube/config
+
+# details for deploying and scaling application 
+# please go through ./app_image/readme.md
+
 ```
 ### Useful commands
 ```
@@ -24,4 +28,3 @@ kubectl get nodes
 kubectl -n kube-system get all
 watch kubectl get all
 ```
-[more details for k8s commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
